@@ -1,0 +1,22 @@
+'use strict'
+
+import { Table, Column, Model, PrimaryKey ,ForeignKey, AllowNull, AutoIncrement, DataType } from 'sequelize-typescript';
+
+@Table({
+  tableName: 'specificphone',
+})
+export class SpecificPhoneModel extends Model {
+  @PrimaryKey
+  @AllowNull(false)
+  @Column
+  id: string;
+
+	@Column
+	capacity: string;
+
+	@Column
+	color: string;
+
+	@Column(DataType.JSONB)
+	data: any;
+}
