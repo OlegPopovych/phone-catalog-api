@@ -1,14 +1,14 @@
-'use strict'
+'use strict';
 
-import { ControllerAction, SpecificPhoneInDb } from "../types";
+import { ControllerAction } from '../types';
 import * as phoneService from '../services/phone.service';
 import { parsePhoneData } from '../utils/parsePhoneData';
 
 export const getAll: ControllerAction = async (req, res) => {
   const phones = await phoneService.findAll();
 
-	console.log(phones);
-	
+  console.log(phones);
+
   res.send(phones);
 };
 
@@ -19,7 +19,6 @@ export const getOneById: ControllerAction = async (req, res) => {
 
   if (!phone) {
     res.sendStatus(404);
-
     return;
   }
 

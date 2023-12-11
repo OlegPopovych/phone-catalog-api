@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
 export interface PhoneModel {
   id: string;
@@ -19,10 +19,10 @@ export interface PhoneModel {
 }
 
 export interface SpecificPhoneInDb {
-	id: string;
-	capacity: string;
-	color: string;
-	data: string;
+  id: string;
+  capacity: string;
+  color: string;
+  data: string;
 }
 
 export interface SpecificPhone {

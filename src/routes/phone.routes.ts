@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import express, { Router } from 'express';
+import { Router } from 'express';
 import * as phoneController from '../controllers/phone.controller';
 
 export const phoneRouter = Router();
