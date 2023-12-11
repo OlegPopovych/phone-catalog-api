@@ -7,8 +7,6 @@ import { parsePhoneData } from '../utils/parsePhoneData';
 export const getAll: ControllerAction = async (req, res) => {
   const phones = await phoneService.findAll();
 
-  console.log(phones);
-
   res.send(phones);
 };
 
