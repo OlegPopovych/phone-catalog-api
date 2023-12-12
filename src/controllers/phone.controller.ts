@@ -1,26 +1,21 @@
 'use strict';
 
-import { ControllerAction } from '../types';
+import dotenv from 'dotenv';
+
+import { ControllerAction, QueryParams } from '../types';
 import * as phoneService from '../services/phone.service';
 import { parsePhoneData } from '../utils/parsePhoneData';
+import { SortType } from '../emuns';
+
+dotenv.config();
+
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
 
 export const getAll: ControllerAction = async (req, res) => {
   const phones = await phoneService.findAll();
 
   res.send(phones);
 };
-
-interface QueryParams {
-  sort?: string;
-  page?: string;
-  perPage?: string;
-}
-
-enum SortType {
-	age =  'age',
-	title =  'title',
-	price =  'price',
-}
 
 export const findAllWithPagination: ControllerAction = async (req, res) => {
   const {sort, page, perPage}: QueryParams = req.query;
@@ -53,7 +48,8 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   }
 
   if (Number(page) > maxPages) {
-    res.redirect(req.protocol + '://' + req.get('host') + '/products/');
+
+    res.redirect(CLIENT_ORIGIN + '/#/phones/');
 
     return;
   }
@@ -85,12 +81,17 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
 export const getOneById: ControllerAction = async (req, res) => {
   const { id } = req.params;
 
-  const phone = await phoneService.getById(id);
+  try {
+    const phone = await phoneService.getById(id);
 
-  if (!phone) {
-    res.sendStatus(404);
-    return;
+    if (!phone) {
+      res.sendStatus(404);
+      return;
+    }
+
+    res.send(parsePhoneData(phone));
+
+  } catch (error) {
+    res.sendStatus(500);
   }
-
-  res.send(parsePhoneData(phone));
 };
