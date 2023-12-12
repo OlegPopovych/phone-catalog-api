@@ -1,5 +1,3 @@
-'use strict';
-
 export const phones = [
   {
     id: '1',
@@ -14,8 +12,7 @@ export const phones = [
     color: 'black',
     ram: '2GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7/black/00.jpg',
+    image: 'https://i.ibb.co/Qj0K96G/00.jpg'
   },
   {
     id: '2',
@@ -30,8 +27,7 @@ export const phones = [
     color: 'black',
     ram: '3GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7-plus/black/00.jpg',
+    image: 'https://i.ibb.co/R0W7m1W/00.jpg'
   },
   {
     id: '3',
@@ -46,8 +42,7 @@ export const phones = [
     color: 'gold',
     ram: '2GB',
     year: 2017,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-8/gold/00.jpg',
+    image: 'https://i.ibb.co/JQyTB1N/00.jpg'
   },
   {
     id: '4',
@@ -62,8 +57,7 @@ export const phones = [
     color: 'black',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/black/00.jpg',
+    image: 'https://i.ibb.co/r5Zt3b9/00.jpg'
   },
   {
     id: '5',
@@ -78,8 +72,7 @@ export const phones = [
     color: 'yellow',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/yellow/00.jpg',
+    image: 'https://i.ibb.co/cbC6Smh/00.jpg'
   },
   {
     id: '6',
@@ -94,8 +87,7 @@ export const phones = [
     color: 'green',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/green/00.jpg',
+    image: 'https://i.ibb.co/4Tv8gYr/00.jpg'
   },
   {
     id: '7',
@@ -110,8 +102,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/gold/00.jpg',
+    image: 'https://i.ibb.co/XS4TrJR/00.jpg'
   },
   {
     id: '8',
@@ -126,8 +117,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '9',
@@ -142,8 +132,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '10',
@@ -158,8 +147,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '11',
@@ -174,8 +162,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/gold/00.jpg',
+    image: 'https://i.ibb.co/xqyW2NS/00.jpg'
   },
   {
     id: '12',
@@ -190,8 +177,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '13',
@@ -206,8 +192,7 @@ export const phones = [
     color: 'red',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/red/00.jpg',
+    image: 'https://i.ibb.co/jHfMv2m/00.jpg'
   },
   {
     id: '14',
@@ -222,8 +207,7 @@ export const phones = [
     color: 'white',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/white/00.jpg',
+    image: 'https://i.ibb.co/dDhqvzb/00.jpg'
   },
   {
     id: '15',
@@ -238,8 +222,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs/spacegray/00.jpg',
+    image: 'https://i.ibb.co/kQjwJZP/00.jpg'
   },
   {
     id: '16',
@@ -254,8 +237,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/gold/00.jpg',
+    image: 'https://i.ibb.co/cCcLJY1/00.jpg'
   },
   {
     id: '17',
@@ -270,8 +252,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/silver/00.jpg',
+    image: 'https://i.ibb.co/PNkm6rh/00.jpg'
   },
   {
     id: '18',
@@ -286,8 +267,7 @@ export const phones = [
     color: 'gold',
     ram: '2GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7/gold/00.jpg',
+    image: 'https://i.ibb.co/hMpVNpM/00.jpg'
   },
   {
     id: '19',
@@ -302,8 +282,7 @@ export const phones = [
     color: 'silver',
     ram: '3GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7-plus/silver/00.jpg',
+    image: 'https://i.ibb.co/LN72mkd/00.jpg'
   },
   {
     id: '20',
@@ -318,8 +297,7 @@ export const phones = [
     color: 'spacegray',
     ram: '2GB',
     year: 2017,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-8/spacegray/00.jpg',
+    image: 'https://i.ibb.co/pv8FdCV/00.jpg'
   },
   {
     id: '21',
@@ -334,8 +312,7 @@ export const phones = [
     color: 'green',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/green/00.jpg',
+    image: 'https://i.ibb.co/4Tv8gYr/00.jpg'
   },
   {
     id: '22',
@@ -350,8 +327,7 @@ export const phones = [
     color: 'purple',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/purple/00.jpg',
+    image: 'https://i.ibb.co/GWYwpcF/00.jpg'
   },
   {
     id: '23',
@@ -366,8 +342,7 @@ export const phones = [
     color: 'yellow',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/yellow/00.jpg',
+    image: 'https://i.ibb.co/cbC6Smh/00.jpg'
   },
   {
     id: '24',
@@ -382,8 +357,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/gold/00.jpg',
+    image: 'https://i.ibb.co/XS4TrJR/00.jpg'
   },
   {
     id: '25',
@@ -398,8 +372,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '26',
@@ -414,8 +387,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '27',
@@ -430,8 +402,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '28',
@@ -446,8 +417,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '29',
@@ -462,8 +432,7 @@ export const phones = [
     color: 'white',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/white/00.jpg',
+    image: 'https://i.ibb.co/dDhqvzb/00.jpg'
   },
   {
     id: '30',
@@ -478,8 +447,7 @@ export const phones = [
     color: 'coral',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/coral/00.jpg',
+    image: 'https://i.ibb.co/hynyQYB/00.jpg'
   },
   {
     id: '31',
@@ -494,8 +462,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs/gold/00.jpg',
+    image: 'https://i.ibb.co/pWyVR4w/00.jpg'
   },
   {
     id: '32',
@@ -510,8 +477,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs/spacegray/00.jpg',
+    image: 'https://i.ibb.co/kQjwJZP/00.jpg'
   },
   {
     id: '33',
@@ -526,8 +492,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/silver/00.jpg',
+    image: 'https://i.ibb.co/PNkm6rh/00.jpg'
   },
   {
     id: '34',
@@ -542,8 +507,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/gold/00.jpg',
+    image: 'https://i.ibb.co/cCcLJY1/00.jpg'
   },
   {
     id: '35',
@@ -558,8 +522,7 @@ export const phones = [
     color: 'rosegold',
     ram: '2GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7/rosegold/00.jpg',
+    image: 'https://i.ibb.co/S3TMhMH/00.jpg'
   },
   {
     id: '36',
@@ -574,8 +537,7 @@ export const phones = [
     color: 'purple',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/purple/00.jpg',
+    image: 'https://i.ibb.co/GWYwpcF/00.jpg'
   },
   {
     id: '37',
@@ -590,8 +552,7 @@ export const phones = [
     color: 'red',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/red/00.jpg',
+    image: 'https://i.ibb.co/98c2bd7/00.jpg'
   },
   {
     id: '38',
@@ -606,8 +567,7 @@ export const phones = [
     color: 'black',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/black/00.jpg',
+    image: 'https://i.ibb.co/r5Zt3b9/00.jpg'
   },
   {
     id: '39',
@@ -622,8 +582,7 @@ export const phones = [
     color: 'red',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/red/00.jpg',
+    image: 'https://i.ibb.co/98c2bd7/00.jpg'
   },
   {
     id: '40',
@@ -638,8 +597,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '41',
@@ -654,8 +612,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '42',
@@ -670,8 +627,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/gold/00.jpg',
+    image: 'https://i.ibb.co/XS4TrJR/00.jpg'
   },
   {
     id: '43',
@@ -686,8 +642,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '44',
@@ -702,8 +657,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '45',
@@ -718,8 +672,7 @@ export const phones = [
     color: 'coral',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/coral/00.jpg',
+    image: 'https://i.ibb.co/hynyQYB/00.jpg'
   },
   {
     id: '46',
@@ -734,8 +687,7 @@ export const phones = [
     color: 'red',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/red/00.jpg',
+    image: 'https://i.ibb.co/jHfMv2m/00.jpg'
   },
   {
     id: '47',
@@ -750,8 +702,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs/gold/00.jpg',
+    image: 'https://i.ibb.co/pWyVR4w/00.jpg'
   },
   {
     id: '48',
@@ -766,8 +717,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/spacegray/00.jpg',
+    image: 'https://i.ibb.co/qmZFQDk/00.jpg'
   },
   {
     id: '49',
@@ -782,8 +732,7 @@ export const phones = [
     color: 'rosegold',
     ram: '3GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7-plus/rosegold/00.jpg',
+    image: 'https://i.ibb.co/02vmFYf/00.jpg'
   },
   {
     id: '50',
@@ -798,8 +747,7 @@ export const phones = [
     color: 'white',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/white/00.jpg',
+    image: 'https://i.ibb.co/PG55ZW6/00.jpg'
   },
   {
     id: '51',
@@ -814,8 +762,7 @@ export const phones = [
     color: 'green',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/green/00.jpg',
+    image: 'https://i.ibb.co/4Tv8gYr/00.jpg'
   },
   {
     id: '52',
@@ -830,8 +777,7 @@ export const phones = [
     color: 'white',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/white/00.jpg',
+    image: 'https://i.ibb.co/PG55ZW6/00.jpg'
   },
   {
     id: '53',
@@ -846,8 +792,7 @@ export const phones = [
     color: 'black',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/black/00.jpg',
+    image: 'https://i.ibb.co/r5Zt3b9/00.jpg'
   },
   {
     id: '54',
@@ -862,8 +807,7 @@ export const phones = [
     color: 'white',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/white/00.jpg',
+    image: 'https://i.ibb.co/PG55ZW6/00.jpg'
   },
   {
     id: '55',
@@ -878,8 +822,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '56',
@@ -894,8 +837,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '57',
@@ -910,8 +852,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/gold/00.jpg',
+    image: 'https://i.ibb.co/xqyW2NS/00.jpg'
   },
   {
     id: '58',
@@ -926,8 +867,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '59',
@@ -942,8 +882,7 @@ export const phones = [
     color: 'midnightgreen',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/midnightgreen/00.jpg',
+    image: 'https://i.ibb.co/KN4Zv7q/00.jpg'
   },
   {
     id: '60',
@@ -958,8 +897,7 @@ export const phones = [
     color: 'yellow',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/yellow/00.jpg',
+    image: 'https://i.ibb.co/Z1jqn0M/00.jpg'
   },
   {
     id: '61',
@@ -974,8 +912,7 @@ export const phones = [
     color: 'silver',
     ram: '2GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7/silver/00.jpg',
+    image: 'https://i.ibb.co/xz1G3NL/00.jpg'
   },
   {
     id: '62',
@@ -990,8 +927,7 @@ export const phones = [
     color: 'purple',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/purple/00.jpg',
+    image: 'https://i.ibb.co/GWYwpcF/00.jpg'
   },
   {
     id: '63',
@@ -1006,8 +942,7 @@ export const phones = [
     color: 'gold',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro-max/gold/00.jpg',
+    image: 'https://i.ibb.co/xqyW2NS/00.jpg'
   },
   {
     id: '64',
@@ -1022,8 +957,7 @@ export const phones = [
     color: 'yellow',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/yellow/00.jpg',
+    image: 'https://i.ibb.co/cbC6Smh/00.jpg'
   },
   {
     id: '65',
@@ -1038,8 +972,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/spacegray/00.jpg',
+    image: 'https://i.ibb.co/4Y5wZS2/00.jpg'
   },
   {
     id: '66',
@@ -1054,8 +987,7 @@ export const phones = [
     color: 'silver',
     ram: '2GB',
     year: 2017,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-8/silver/00.jpg',
+    image: 'https://i.ibb.co/FDzKxns/00.jpg'
   },
   {
     id: '67',
@@ -1070,8 +1002,7 @@ export const phones = [
     color: 'red',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11/red/00.jpg',
+    image: 'https://i.ibb.co/98c2bd7/00.jpg'
   },
   {
     id: '68',
@@ -1086,8 +1017,7 @@ export const phones = [
     color: 'spacegray',
     ram: '4GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xs-max/spacegray/00.jpg',
+    image: 'https://i.ibb.co/qmZFQDk/00.jpg'
   },
   {
     id: '69',
@@ -1102,8 +1032,7 @@ export const phones = [
     color: 'gold',
     ram: '3GB',
     year: 2016,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-7-plus/gold/00.jpg',
+    image: 'https://i.ibb.co/TTRdBqB/00.jpg'
   },
   {
     id: '70',
@@ -1118,8 +1047,7 @@ export const phones = [
     color: 'silver',
     ram: '4GB',
     year: 2019,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-11-pro/silver/00.jpg',
+    image: 'https://i.ibb.co/hH3w9D1/00.jpg'
   },
   {
     id: '71',
@@ -1134,7 +1062,6 @@ export const phones = [
     color: 'yellow',
     ram: '3GB',
     year: 2018,
-    image:
-      'https://raw.githubusercontent.com/fe-oct22-senior-html-developers/product_catalog_static/main/img/phones/apple-iphone-xr/yellow/00.jpg',
-  },
+    image: 'https://i.ibb.co/Z1jqn0M/00.jpg'
+  }
 ];

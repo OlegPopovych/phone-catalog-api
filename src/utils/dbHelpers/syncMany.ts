@@ -4,8 +4,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { SpecificPhoneModel, PhoneModel } from '../../models';
 import { sequelize } from '../initDb';
-import { phones } from './phonesShortData';
 
+import { phones } from './newShortPnonesData';
 import newPhotoLinks from './links.json';
 
 export const seedPhones = async () => {
