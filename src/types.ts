@@ -52,3 +52,9 @@ type Description = {
 };
 
 export type ControllerAction = (req: Request, res: Response) => void;
+
+export interface QueryParams {
+  sort?: string;
+  page?: string;
+  perPage?: string;
+}
