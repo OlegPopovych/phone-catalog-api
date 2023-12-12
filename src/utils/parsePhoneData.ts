@@ -1,10 +1,12 @@
-'use strict'
+'use strict';
 
-import { SpecificPhone, SpecificPhoneInDb } from '../types'
+import { SpecificPhone, SpecificPhoneInDb } from '../types';
 
-export const parsePhoneData = (phoneFromDb: SpecificPhoneInDb): SpecificPhone => {
-	const phone = JSON.parse(phoneFromDb.data);
-console.log(phone);
+export const parsePhoneData = (
+  phoneFromDb: SpecificPhoneInDb,
+): SpecificPhone => {
+  const phone = JSON.parse(phoneFromDb.data);
+  console.log(phone);
 
-	return phone;
+  return phone;
 };

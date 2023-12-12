@@ -1,6 +1,13 @@
-'use strict'
+'use strict';
 
-import { Table, Column, Model, PrimaryKey ,ForeignKey, AllowNull, AutoIncrement } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  PrimaryKey,
+  ForeignKey,
+  AllowNull,
+} from 'sequelize-typescript';
 import { SpecificPhoneModel } from './SpecificPhoneModel';
 
 @Table({
@@ -10,42 +17,42 @@ export class PhoneModel extends Model {
   @PrimaryKey
   @AllowNull(false)
   @Column
-  id: string;
+    id: string;
 
   @Column
-  category: string;
+    category: string;
 
   @ForeignKey(() => SpecificPhoneModel)
   @Column
-  phoneId: string;
+    phoneId: string;
 
   @Column
-  itemId: string;
+    itemId: string;
 
   @Column
-  name: string;
+    name: string;
 
   @Column
-  fullPrice: number;
+    fullPrice: number;
 
   @Column
-  price: number;
+    price: number;
 
   @Column
-  screen: string;
+    screen: string;
 
   @Column
-  capacity: string;
+    capacity: string;
 
   @Column
-  color: string;
-	
-  @Column
-  ram: string;
+    color: string;
 
   @Column
-  year: number;
+    ram: string;
 
   @Column
-  image: string;
+    year: number;
+
+  @Column
+    image: string;
 }
