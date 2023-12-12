@@ -6,15 +6,55 @@ import { ControllerAction, QueryParams } from '../types';
 import * as phoneService from '../services/phone.service';
 import { parsePhoneData } from '../utils/parsePhoneData';
 import { SortType } from '../emuns';
+import { generateRandomArray } from '../utils/randomGenerator';
 
 dotenv.config();
 
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
+const PHONES_FOR_COMPONENT = 10;
 
-export const getAll: ControllerAction = async (req, res) => {
-  const phones = await phoneService.findAll();
+export const getBrandNew: ControllerAction = async (req, res) => {
+  try {
+    const phones = await phoneService.getBrandNew({
+      count: PHONES_FOR_COMPONENT,
+    });
 
-  res.send(phones);
+    res.send(phones);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+export const getHotPrices: ControllerAction = async (req, res) => {
+  try {
+    const phones = await phoneService.getHotPrices({
+      count: PHONES_FOR_COMPONENT,
+    });
+
+    res.send(phones);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+export const getSuggestedProducts: ControllerAction = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const phonesObjectsWithIds = await phoneService.getSuggestedProductsIds(id);
+    const ids = phonesObjectsWithIds.map(obj => obj.id);
+
+    const randomIndexes = generateRandomArray({size: PHONES_FOR_COMPONENT, to: ids.length - 1});
+    const randomIds = randomIndexes.reduce((acc: string[], k) => {
+      return acc = [...acc, ids[k]];
+    }, []);
+
+    const suggestedProducts = await phoneService.getSuggestedProducts(randomIds);
+
+    res.send(suggestedProducts);
+  } catch (error) {
+    res.sendStatus(500);
+  }
 };
 
 export const findAllWithPagination: ControllerAction = async (req, res) => {
