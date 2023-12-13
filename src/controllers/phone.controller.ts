@@ -38,11 +38,11 @@ export const getHotPrices: ControllerAction = async (req, res) => {
 };
 
 export const getSuggestedProducts: ControllerAction = async (req, res) => {
-  const {id} = req.params;
+  const {id: phoneId} = req.params;
 
   try {
-    const phonesObjectsWithIds = await phoneService.getSuggestedProductsIds(id);
-    const ids = phonesObjectsWithIds.map(obj => obj.id);
+    const phonesObjectsWithIds = await phoneService.getSuggestedProductsIds(phoneId);
+    const ids = phonesObjectsWithIds.map(obj => obj.phoneId);
 
     const randomIndexes = generateRandomArray({size: PHONES_FOR_COMPONENT, to: ids.length - 1});
     const randomIds = randomIndexes.reduce((acc: string[], k) => {

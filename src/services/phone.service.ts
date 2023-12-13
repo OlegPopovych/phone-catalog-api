@@ -16,12 +16,12 @@ export const getHotPrices = async ({ count }: { count:number }) => await PhoneMo
   limit: count,
 });
 
-export const getSuggestedProductsIds = async (id: string) => {
+export const getSuggestedProductsIds = async (phoneId: string) => {
   const ids = await PhoneModel.findAll({
-    attributes: ['id'],
+    attributes: ['phoneId'],
     where: {
       id: {
-        [Op.notIn]: [id],
+        [Op.notIn]: [phoneId],
       },
     },
   });
@@ -32,7 +32,7 @@ export const getSuggestedProductsIds = async (id: string) => {
 export const getSuggestedProducts = async (ids: string[]) => {
   const phones =await PhoneModel.findAll({
     where: {
-      id: {
+      phoneId: {
         [Op.in]: ids,
       },
     },
