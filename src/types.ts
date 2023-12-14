@@ -65,3 +65,12 @@ export interface User {
   email: string,
   password: string,
 }
+
+export interface QueryParamsProcess {
+	sort?: string;
+  page?: string;
+  perPage?: string;
+  totalElementsInDb: number;
+  DEFAULT_PER_PAGE: number;
+  DEFAULT_PAGE: number;
+}
