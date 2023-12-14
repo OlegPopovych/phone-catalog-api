@@ -58,3 +58,13 @@ export interface QueryParams {
   page?: string;
   perPage?: string;
 }
+
+export interface QueryParamsProcess {
+
+	sort?: string;
+  page?: string;
+  perPage?: string;
+  totalElementsInDb: number;
+  DEFAULT_PER_PAGE: number;
+  DEFAULT_PAGE: number;
+}
