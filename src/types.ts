@@ -59,8 +59,14 @@ export interface QueryParams {
   perPage?: string;
 }
 
-export interface QueryParamsProcess {
+export interface User {
+  id: string,
+  name: string,
+  email: string,
+  password: string,
+}
 
+export interface QueryParamsProcess {
 	sort?: string;
   page?: string;
   perPage?: string;

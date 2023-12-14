@@ -1,10 +1,10 @@
 import { Sequelize } from 'sequelize-typescript';
-import { PhoneModel, SpecificPhoneModel } from '../models';
+import { PhoneModel, SpecificPhoneModel, UserModel } from '../models';
 
 const DB_URI = process.env.DB_URI;
 
 export const sequelize = new Sequelize(DB_URI ?? '', {
-  models: [PhoneModel, SpecificPhoneModel],
+  models: [PhoneModel, SpecificPhoneModel, UserModel],
 });
 
 export const connect = async () => {
