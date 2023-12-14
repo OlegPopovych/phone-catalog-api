@@ -5,7 +5,7 @@ import * as authService from '../services/auth.service';
 import * as jwtService from '../services/jwt.service';
 import bcrypt from 'bcrypt';
 
-export const signUp: ControllerAction = async(req, res) => {
+export const signUp: ControllerAction = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -13,25 +13,25 @@ export const signUp: ControllerAction = async(req, res) => {
     await authService.signUp(name, email, hashedPass);
 
     res.sendStatus(201);
-  } catch(error) {
+  } catch (error) {
     res.sendStatus(500);
   }
 };
 
-export const signIn: ControllerAction = async(req, res) => {
+export const signIn: ControllerAction = async (req, res) => {
   try {
     const { email, password } = req.body;
 
     const user = await authService.findByEmail(email);
 
-    if(!user) {
+    if (!user) {
       res.sendStatus(401);
       return;
     }
 
     const isPassValid = bcrypt.compare(password, user.password);
 
-    if(!isPassValid) {
+    if (!isPassValid) {
       res.sendStatus(401);
       return;
     }
@@ -44,8 +44,7 @@ export const signIn: ControllerAction = async(req, res) => {
       user: normalizedUser,
       accessToken,
     });
-
-  } catch(error) {
+  } catch (error) {
     res.sendStatus(500);
   }
 };
