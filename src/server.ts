@@ -8,6 +8,7 @@ import { phoneRouter } from './routes/phone.routes';
 dotenv.config();
 
 import { connect } from './utils/initDb';
+import { authRouter } from './routes/auth.route';
 
 connect();
 
@@ -16,6 +17,7 @@ const app = express()
   .use(cors({ origin: '*' }));
 
 app.use('/products', phoneRouter);
+app.use('/auth', express.json(), authRouter);
 
 app.get('/', (req, res) => {
   res.send('Hi dude!👽');
