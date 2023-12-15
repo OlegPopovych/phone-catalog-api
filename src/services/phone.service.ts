@@ -48,11 +48,6 @@ export const getCount = async () => {
   return PhoneModel.count();
 };
 
-// export const getSliderData = () => {
-// 	// const data = fs.re
-//   return PhoneModel.count();
-// };
-
 type PaginationParams = {
   sortBy: string;
   selectedPage: number;
