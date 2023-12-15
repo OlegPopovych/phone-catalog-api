@@ -7,13 +7,16 @@ import {
   Model,
   PrimaryKey,
   AllowNull,
+  ForeignKey,
+  DataType,
   Default,
 } from 'sequelize-typescript';
+import { UserModel } from './UserModel';
 
 @Table({
-  tableName: 'users',
+  tableName: 'favorites',
 })
-export class UserModel extends Model {
+export class FavoriteModel extends Model {
   @PrimaryKey
   @AllowNull(false)
 	@Default(DataTypes.UUIDV4)
@@ -22,15 +25,12 @@ export class UserModel extends Model {
   })
     id: string;
 
+  @ForeignKey(() => UserModel)
   @AllowNull(false)
   @Column
-    name: string;
+    userId: string;
 
   @AllowNull(false)
-  @Column
-    email: string;
-
-  @AllowNull(false)
-  @Column
-    password: string;
+  @Column(DataType.JSONB)
+    favorite: any;
 }
