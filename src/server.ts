@@ -1,6 +1,10 @@
 'use strict';
 
 import express from 'express';
+import passport from 'passport';
+import session from 'express-session';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { phoneRouter } from './routes/phone.routes';
@@ -13,11 +17,30 @@ import { authRouter } from './routes/auth.route';
 connect();
 
 const app = express()
-  .use(express.json())
   .use(cors({ origin: '*' }));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
+app.use(cookieParser());
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 60*60*24*1000,
+    },
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/products', phoneRouter);
-app.use('/auth', express.json(), authRouter);
+app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
   res.send('Hi dude!👽');

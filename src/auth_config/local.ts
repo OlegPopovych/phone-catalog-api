@@ -1,7 +1,8 @@
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
-import * as phoneService from '../services/phone.service';
+import * as userService from '../services/user.service';
 import bcrypt from 'bcrypt';
+import { User } from '../types';
 
 passport.use(new LocalStrategy.Strategy(
   {
@@ -9,14 +10,15 @@ passport.use(new LocalStrategy.Strategy(
     passwordField: 'password',
   },
   async function (email, password, done) {
-    console.log(email, password);
-    const currentUser = await phoneService.getById('1');
+    const currentUser = await userService.findByEmail(email);
+
+    console.log(`🚩🚩🚩That dude tries to log in! His name ${currentUser?.name}🚩🚩🚩`);
 
     if (!currentUser) {
       return done(null, false, { message: `User with email ${email} does not exist` });
     }
 
-    if (!bcrypt.compareSync(password, currentUser.id)) {
+    if (!bcrypt.compareSync(password, currentUser.password)) {
       return done(null, false, { message: 'Incorrect password provided' });
     }
     return done(null, currentUser);
@@ -27,10 +29,10 @@ export const authLocal = passport.authenticate('local', {
 });
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  done(null, (user as User).id);
 });
 
-passport.deserializeUser(async (id, done) => {
-  const currentUser = await phoneService.getById('1');
+passport.deserializeUser(async (id: string, done) => {
+  const currentUser = await userService.findById(id);
   done(null, currentUser);
 });
