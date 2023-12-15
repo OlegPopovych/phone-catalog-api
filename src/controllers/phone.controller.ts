@@ -5,9 +5,8 @@ import dotenv from 'dotenv';
 import { ControllerAction, QueryParams } from '../types';
 import * as phoneService from '../services/phone.service';
 import { parsePhoneData } from '../utils/parsePhoneData';
-// import { SortType } from '../emuns';
 import { generateRandomArray } from '../utils/randomGenerator';
-import { processQuery } from '../utils/processQuery';
+import { processQuery } from '../utils/validateQuery';
 
 dotenv.config();
 
@@ -66,7 +65,8 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   const totalElementsInDb = await phoneService.getCount();
 
   const {
-    sotrBy,
+    shouldRedirect,
+    sortBy,
     elementsOnPage,
     selectedPage,
     maxPages,
@@ -79,8 +79,7 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
     DEFAULT_PAGE,
   });
 
-  if (Number(page) > maxPages) {
-
+  if (shouldRedirect) {
     res.redirect(CLIENT_ORIGIN + '/#/phones/');
 
     return;
@@ -91,7 +90,7 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
       count,
       rows,
     } = await phoneService.findAllWithPagination({
-      sotrBy,
+      sortBy,
       selectedPage,
       elementsOnPage,
     });
