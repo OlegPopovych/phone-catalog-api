@@ -1,0 +1,14 @@
+{
+  "phones": {
+    "url": "https://i.ibb.co/P95L9xY/phones.png",
+    "alt": "Phone catalog"
+	},
+  "tablets": {
+    "url": "https://i.ibb.co/JdVRVsk/tablets.png",
+    "alt": "Tablets catalog"
+	},
+  "accessories": {
+    "url": "https://i.ibb.co/KXLMxmT/accessories.png",
+    "alt": "Accessories catalog"
+	}
+}

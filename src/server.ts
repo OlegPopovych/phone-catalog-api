@@ -13,6 +13,8 @@ dotenv.config();
 
 import { connect } from './utils/initDb';
 import { authRouter } from './routes/auth.route';
+import { staticRouter } from './routes/static.router';
+import { userRouter } from './routes/user.routes';
 
 connect();
 
@@ -41,6 +43,8 @@ app.use(passport.session());
 
 app.use('/products', phoneRouter);
 app.use('/auth', authRouter);
+app.use('/static', staticRouter);
+app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
   res.send('Hi dude!👽');

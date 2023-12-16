@@ -1,16 +1,19 @@
 'use strict';
 
 import { Router } from 'express';
-import * as phoneController from '../controllers/phone.controller';
 import { isLoggedIn } from '../utils/isLoggedIn';
 
 export const userRouter = Router();
 
-userRouter.get('/favorites', isLoggedIn, phoneController.findAllWithPagination);
-userRouter.put('/favorites', isLoggedIn, phoneController.findAllWithPagination);
+userRouter.get('/favorites', isLoggedIn);
+userRouter.put('/favorites', isLoggedIn);
 
-userRouter.get('/cart', isLoggedIn, phoneController.findAllWithPagination);
-userRouter.put('/cart', isLoggedIn, phoneController.findAllWithPagination);
+userRouter.get('/cart', isLoggedIn);
+userRouter.put('/cart', isLoggedIn);
 
-userRouter.get('/orders', isLoggedIn, phoneController.findAllWithPagination);
-userRouter.post('/orders', isLoggedIn, phoneController.findAllWithPagination);
+userRouter.get('/orders', isLoggedIn);
+userRouter.post('/orders', isLoggedIn);
+
+userRouter.get('/test', isLoggedIn, (req, res) => {
+  res.send('<h1>HELLO</h1>');
+});

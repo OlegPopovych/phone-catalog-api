@@ -13,6 +13,7 @@ export const findByEmail = (email: string) => {
 };
 
 export const signUp = async (name: string, email: string, password: string) => {
+
   await sequelize.sync().then(() => {
     console.log('Database synchronized successfully.');
   }).catch((error) => {

@@ -44,18 +44,18 @@ export const getSuggestedProducts = async (ids: string[]) => {
 export const getById = async (id: string): Promise<SpecificPhoneInDb | null> =>
   SpecificPhoneModel.findByPk(id);
 
-export const getCount = () => {
+export const getCount = async () => {
   return PhoneModel.count();
 };
 
 type PaginationParams = {
-  sotrBy: string;
+  sortBy: string;
   selectedPage: number;
   elementsOnPage: number;
 };
 
 export const findAllWithPagination = async ({
-  sotrBy,
+  sortBy,
   selectedPage,
   elementsOnPage,
 }: PaginationParams) => {
@@ -63,7 +63,7 @@ export const findAllWithPagination = async ({
   const offset = (selectedPage - 1) * elementsOnPage;
 
   const { count, rows } = await PhoneModel.findAndCountAll({
-    order: [[`${(sotrBy)}`, 'ASC']],
+    order: [[`${(sortBy)}`, 'ASC']],
     offset,
     limit: Number(elementsOnPage),
   });

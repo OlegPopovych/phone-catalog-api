@@ -3,7 +3,6 @@
 import { ControllerAction, User } from '../types';
 import * as authService from '../services/auth.service';
 import * as userService from '../services/user.service';
-// import * as jwtService from '../services/jwt.service';
 import bcrypt from 'bcrypt';
 
 export const signUp: ControllerAction = async (req, res) => {
@@ -26,4 +25,11 @@ export const signIn: ControllerAction = async (req, res)=> {
   res.status(200).send(
     userService.normalizeData((req.user as User))
   );
+};
+
+export const signOut: ControllerAction = (req, res) => {
+  req.session.destroy(() => {
+    res.clearCookie('connect.sid');
+    res.send({ success: true });
+  });
 };
