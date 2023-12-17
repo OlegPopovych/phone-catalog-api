@@ -15,7 +15,7 @@ export const getSliderData: ControllerAction = async (req, res) => {
 
     res.json(jsonData);
   } catch (error) {
-    console.error('Помилка:', error);
+    console.error('Error:', error);
     res.sendStatus(500);
   }
 };
@@ -42,7 +42,7 @@ export const getCategorysData: ControllerAction = async (req, res) => {
 
     res.json(tablesData);
   } catch (error) {
-    console.error('Помилка:', error);
+    console.error('Error:', error);
     res.sendStatus(500);
   }
 };

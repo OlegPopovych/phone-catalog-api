@@ -19,7 +19,7 @@ import { userRouter } from './routes/user.routes';
 connect();
 
 const app = express()
-  .use(cors({ origin: '*' }));
+  .use(cors({ origin: 'http://localhost:3000', credentials: true, }));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

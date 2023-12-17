@@ -27,6 +27,14 @@ export const signIn: ControllerAction = async (req, res)=> {
   );
 };
 
+export const checkIfAuthorized: ControllerAction = async (req, res)=> {
+  console.log(`🤘Happy to see you again ${(req.user as User)?.name}!🤘`);
+
+  res.status(200).send(
+    userService.normalizeData((req.user as User))
+  );
+};
+
 export const signOut: ControllerAction = (req, res) => {
   req.session.destroy(() => {
     res.clearCookie('connect.sid');
