@@ -1,20 +1,13 @@
 import { Sequelize } from 'sequelize-typescript';
-import { PhoneModel, SpecificPhoneModel, UserModel } from '../models';
-import { FavoriteModel } from '../models/FavoriteModel';
-import { CartModel } from '../models/CartModel';
-import { OrderModel } from '../models/OrderModel';
+import { AccessoriesModel } from '../models/newModels/AccessoriesModel';
+import { ProductsModel } from '../models/newModels/ProductsModel';
+import { PhoneModel } from '../models/newModels/PhoneModel';
+import { TabletModel } from '../models/newModels/TabletModel';
 
 const DB_URI = process.env.DB_URI;
 
 export const sequelize = new Sequelize(DB_URI ?? '', {
-  models: [
-    PhoneModel,
-    SpecificPhoneModel,
-    UserModel,
-    FavoriteModel,
-    CartModel,
-    OrderModel,
-  ],
+  models: [AccessoriesModel, ProductsModel, PhoneModel, TabletModel],
 });
 
 export const connect = async () => {

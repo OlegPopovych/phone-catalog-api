@@ -3,6 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import FormData from 'form-data';
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 async function uploadPhoto(
   apiKey: string,
   model: string,
@@ -61,7 +65,7 @@ async function processPhotos(
       images: links,
     };
 
-    const linksFilePath = path.join(__dirname, 'links.json');
+    const linksFilePath = path.join(__dirname, 'accessoriesLinks.json');
     // fs.writeFileSync(linksFilePath, JSON.stringify(linksObject, null, 2));
     fs.appendFileSync(linksFilePath, JSON.stringify(linksObject, null, 2));
 
@@ -71,15 +75,16 @@ async function processPhotos(
   }
 }
 
-const imgBBApiKey = '***';
+const imgBBApiKey = process.env.IMGBB_API_key_v2 || '';
+console.log({imgBBApiKey});
 
-import folders from './foldersNamesArr.json';
+import folders from './img/accessoriesFolders.json';
 
 for (const phoneModel of folders) {
   const model = phoneModel[0];
   const color = phoneModel[1];
 
-  const directoryPath = path.join(__dirname, 'phones', model, color);
+  const directoryPath = path.join(__dirname, './img/accessories', model, color);
 
   processPhotos(imgBBApiKey, model, color, directoryPath);
 }
