@@ -2,7 +2,6 @@
 
 import { UserModel } from '../models';
 import { User } from '../types';
-import { sequelize } from '../utils/initDb';
 
 export const normalize = ({ id, email, name }: Omit<User, 'password'>) => {
   return { id, email, name };
@@ -13,12 +12,15 @@ export const findByEmail = (email: string) => {
 };
 
 export const signUp = async (name: string, email: string, password: string) => {
-
-  await sequelize.sync().then(() => {
-    console.log('Database synchronized successfully.');
-  }).catch((error) => {
-    console.error('Error during synchronization:', error);
+  const existedUser = await UserModel.findOne({
+    where: {
+      email,
+    }
   });
+
+  if (existedUser) {
+    return existedUser;
+  }
 
   await UserModel.create({ name, email, password });
 };

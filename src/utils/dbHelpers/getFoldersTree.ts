@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const phonesDirectoryPath = path.join(__dirname, 'phones');
+const phonesDirectoryPath = path.join(__dirname, './img/accessories');
 
 function getAllFolders(
   directoryPath: string,
@@ -29,7 +29,7 @@ function getAllFolders(
 
 const foldersNames = getAllFolders(phonesDirectoryPath);
 
-const outputFilePath = path.join(__dirname, 'foldersNamesArr.json');
+const outputFilePath = path.join(__dirname, 'accessoriesFolders.json');
 
 fs.writeFileSync(outputFilePath, `[${foldersNames.join(',\n')}]`);
 

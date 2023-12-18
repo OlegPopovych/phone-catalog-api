@@ -7,7 +7,6 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { phoneRouter } from './routes/phone.routes';
 
 dotenv.config();
 
@@ -15,6 +14,10 @@ import { connect } from './utils/initDb';
 import { authRouter } from './routes/auth.route';
 import { staticRouter } from './routes/static.router';
 import { userRouter } from './routes/user.routes';
+import { tabletsRouter } from './routes/tablets.routes';
+import { accessoriesRouter } from './routes/accessories.routes';
+import { productsRouter } from './routes/products.routes';
+import { phonesRouter } from './routes/phones.routes';
 
 connect();
 
@@ -41,7 +44,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/products', phoneRouter);
+app.use('/products', productsRouter);
+app.use('/phones', phonesRouter);
+app.use('/tablets', tabletsRouter);
+app.use('/accessories', accessoriesRouter);
 app.use('/auth', authRouter);
 app.use('/static', staticRouter);
 app.use('/user', userRouter);

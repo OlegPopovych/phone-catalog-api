@@ -1,10 +1,10 @@
 'use strict';
 
-import { SpecificPhone, SpecificPhoneInDb } from '../types';
+import { SpecificProduct, SpecificProductInDb } from '../types';
 
 export const parsePhoneData = (
-  phoneFromDb: SpecificPhoneInDb,
-): SpecificPhone => {
+  phoneFromDb: SpecificProductInDb,
+): SpecificProduct => {
   const phone = JSON.parse(phoneFromDb.data);
   console.log(phone);
 

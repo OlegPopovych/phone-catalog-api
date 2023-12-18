@@ -2,7 +2,7 @@
 
 import { Request, Response } from 'express';
 
-export interface PhoneModel {
+export interface ProductModel {
   id: string;
   category: string;
   phoneId: string;
@@ -18,14 +18,14 @@ export interface PhoneModel {
   image: string;
 }
 
-export interface SpecificPhoneInDb {
+export interface SpecificProductInDb {
   id: string;
   capacity: string;
   color: string;
   data: string;
 }
 
-export interface SpecificPhone {
+export interface SpecificProduct {
   id: string;
   namespaceId: string;
   name: string;

@@ -11,7 +11,13 @@ export const signUp: ControllerAction = async (req, res) => {
 
     const hashedPass = await bcrypt.hash(password, 10);
 
-    await authService.signUp(name, email, hashedPass);
+    const newUser = await authService.signUp(name, email, hashedPass);
+
+    if (newUser === null) {
+      return res.status(409).json({
+        error: 'User with this email already exists',
+      });
+    }
 
     res.sendStatus(201);
   } catch (error) {
