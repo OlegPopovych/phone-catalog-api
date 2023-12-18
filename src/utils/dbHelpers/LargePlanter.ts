@@ -84,7 +84,12 @@ const DB_URI = process.env.DB_URI;
 console.log(DB_URI);
 
 export const sequelize = new Sequelize(DB_URI ?? '', {
-  models: [AccessoriesModel, ProductsModel, PhoneModel, TabletModel],
+  models: [
+    AccessoriesModel,
+    ProductsModel,
+    PhoneModel,
+    TabletModel,
+  ],
 });
 
 export const connect = async () => {
