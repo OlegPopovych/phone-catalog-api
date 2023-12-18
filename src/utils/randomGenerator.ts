@@ -1,15 +1,13 @@
 'use strict';
+export const generateRandomArray = ({ size, to }: { size: number; to: number }) => {
+  const uniqueValues = new Set<number>();
 
-const getRandomInt = (to: number) => {
-  return Math.floor(Math.random() * (to + 1));
-};
-
-export const generateRandomArray = ({size, to}: {size: number, to: number}) => {
-  const randomArray = [];
-
-  for (let i = 0; i < size; i++) {
-    randomArray.push(getRandomInt(to));
+  while (uniqueValues.size < size) {
+    uniqueValues.add(getRandomInt(to));
   }
 
-  return randomArray;
+  return Array.from(uniqueValues);
+};
+const getRandomInt = (max: number) => {
+  return Math.floor(Math.random() * (max + 1));
 };
