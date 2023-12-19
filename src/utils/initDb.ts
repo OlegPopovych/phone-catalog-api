@@ -14,7 +14,8 @@ export const sequelize = new Sequelize(DB_URI ?? '', {
   models: [
     AccessoriesModel,
     ProductsModel,
-    PhoneModel, TabletModel,
+    PhoneModel,
+    TabletModel,
     UserModel,
     OrderModel,
     FavoriteModel,

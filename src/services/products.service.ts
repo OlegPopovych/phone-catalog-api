@@ -2,18 +2,37 @@
 
 import { Op } from 'sequelize';
 import { ProductsModel } from '../models/newModels/ProductsModel';
+import { normalizeProductsData } from '../utils/normaliseData';
 
-export const getBrandNew = async ({ count }: { count:number }) => await ProductsModel.findAndCountAll({
-  order: [['fullPrice', 'DESC']],
-  offset: 0,
-  limit: count,
-});
+export const getBrandNew = async ({ count }: { count:number }) => {
+  const prods = await ProductsModel.findAndCountAll({
+    order: [['fullPrice', 'DESC']],
+    offset: 0,
+    limit: count,
+  });
 
-export const getHotPrices = async ({ count }: { count:number }) => await ProductsModel.findAndCountAll({
-  order: [['price', 'DESC']],
-  offset: 0,
-  limit: count,
-});
+  return {
+    info: {
+      count: prods.count,
+    },
+    records: prods.rows.map(prod => normalizeProductsData(prod)),
+  };
+};
+
+export const getHotPrices = async ({ count }: { count:number }) => {
+  const prods = await ProductsModel.findAndCountAll({
+    order: [['price', 'DESC']],
+    offset: 0,
+    limit: count,
+  });
+
+  return {
+    info: {
+      count: prods.count,
+    },
+    records: prods.rows.map(prod => normalizeProductsData(prod)),
+  };
+};
 
 export const getSuggestedProductsIds = async (itemId: string) => {
   const ids = await ProductsModel.findAll({
@@ -29,7 +48,7 @@ export const getSuggestedProductsIds = async (itemId: string) => {
 };
 
 export const getSuggestedProducts = async (ids: string[]) => {
-  const prods =await ProductsModel.findAll({
+  const prods = await ProductsModel.findAll({
     where: {
       itemId: {
         [Op.in]: ids,
@@ -37,5 +56,46 @@ export const getSuggestedProducts = async (ids: string[]) => {
     },
   });
 
-  return prods;
+  return prods.map(prod => normalizeProductsData(prod));
+};
+
+export const countByCatecory = async (category: string) => {
+  const count = await ProductsModel.count({
+    where: {
+      category,
+    }
+  });
+
+  return count;
+};
+
+type PaginationParams = {
+  sortBy: string;
+  selectedPage: number;
+  elementsOnPage: number;
+	category: string;
+};
+
+export const findAllWithPagination = async ({
+  sortBy,
+  selectedPage,
+  elementsOnPage,
+  category,
+}: PaginationParams) => {
+
+  const offset = (selectedPage - 1) * elementsOnPage;
+
+  const { count, rows } = await ProductsModel.findAndCountAll({
+    where: {
+      category,
+    },
+    order: [[`${(sortBy)}`, 'ASC']],
+    offset,
+    limit: Number(elementsOnPage),
+  });
+
+  return {
+    count,
+    rows: rows.map(prod => normalizeProductsData(prod)),
+  };
 };

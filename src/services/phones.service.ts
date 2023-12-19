@@ -7,31 +7,31 @@ export const getCount = async () => {
   return PhoneModel.count();
 };
 
-type PaginationParams = {
-  sortBy: string;
-  selectedPage: number;
-  elementsOnPage: number;
-};
+// type PaginationParams = {
+//   sortBy: string;
+//   selectedPage: number;
+//   elementsOnPage: number;
+// };
 
-export const findAllWithPagination = async ({
-  sortBy,
-  selectedPage,
-  elementsOnPage,
-}: PaginationParams) => {
+// export const findAllWithPagination = async ({
+//   sortBy,
+//   selectedPage,
+//   elementsOnPage,
+// }: PaginationParams) => {
 
-  const offset = (selectedPage - 1) * elementsOnPage;
+//   const offset = (selectedPage - 1) * elementsOnPage;
 
-  const { count, rows } = await PhoneModel.findAndCountAll({
-    order: [[`${(sortBy)}`, 'ASC']],
-    offset,
-    limit: Number(elementsOnPage),
-  });
+//   const { count, rows } = await PhoneModel.findAndCountAll({
+//     order: [[`${(sortBy)}`, 'ASC']],
+//     offset,
+//     limit: Number(elementsOnPage),
+//   });
 
-  return {
-    count,
-    rows,
-  };
-};
+//   return {
+//     count,
+//     rows,
+//   };
+// };
 
 export const getById = async (id: string): Promise<SpecificProductInDb | null> =>
   PhoneModel.findByPk(id);
