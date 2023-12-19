@@ -2,10 +2,9 @@
 
 import { Request, Response } from 'express';
 
-export interface ProductModel {
+export interface Product {
   id: string;
   category: string;
-  phoneId: string;
   itemId: string;
   name: string;
   fullPrice: number;

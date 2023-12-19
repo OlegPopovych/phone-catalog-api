@@ -3,9 +3,7 @@
 import { promises as fsPromises } from 'fs';
 import path from 'path';
 import { ControllerAction } from '../types';
-import * as phonesService from '../services/phones.service';
-import * as accessoriesService from '../services/accessories.service';
-import * as tabletsService from '../services/tablets.service';
+import * as productsService from '../services/products.service';
 
 export const getSliderData: ControllerAction = async (req, res) => {
   try {
@@ -28,9 +26,9 @@ export const getCategorysData: ControllerAction = async (req, res) => {
 
     const data = await fsPromises.readFile(filePath, 'utf8');
 
-    const phonesCount = await phonesService.getCount();
-    const accessoriesCount = await accessoriesService.getCount();
-    const tabletsCount = await tabletsService.getCount();
+    const phonesCount = await productsService.countByCatecory('phones');
+    const accessoriesCount = await productsService.countByCatecory('accessories');
+    const tabletsCount = await productsService.countByCatecory('tablets');
 
     const itemsInDatabaseTables = {
       phones: phonesCount,

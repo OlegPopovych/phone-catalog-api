@@ -1,15 +1,16 @@
 'use strict';
 
 import dotenv from 'dotenv';
-import * as constants from '../utils/constants';
+// import * as constants from '../utils/constants';
 
 import {
   ControllerAction,
-  QueryParams,
+  // QueryParams,
 } from '../types';
 import * as phonesService from '../services/phones.service';
-import { parsePhoneData } from '../utils/parsePhoneData';
-import { processQuery } from '../utils/validateQuery';
+// import { processQuery } from '../utils/validateQuery';
+import { parsePhoneData } from '../utils/normaliseData';
+// import { countByCatecory } from '../services/products.service';
 
 dotenv.config();
 
@@ -31,53 +32,55 @@ export const getOneById: ControllerAction = async (req, res) => {
   }
 };
 
-export const findAllWithPagination: ControllerAction = async (req, res) => {
-  const {sort, page, perPage}: QueryParams = req.query;
+// export const findAllWithPagination: ControllerAction = async (req, res) => {
+//   const {sort, page, perPage}: QueryParams = req.query;
 
-  const totalElementsInDb = await phonesService.getCount();
+//   // const totalElementsInDb = await phonesService.getCount();
 
-  const {
-    shouldRedirect,
-    sortBy,
-    elementsOnPage,
-    selectedPage,
-    maxPages,
-  } = processQuery({
-    sort,
-    page,
-    perPage,
-    totalElementsInDb,
-    DEFAULT_PER_PAGE: constants.DEFAULT_PER_PAGE,
-    DEFAULT_PAGE: constants.DEFAULT_PAGE,
-  });
+//   const totalElementsInDb = await countByCatecory('phones');
 
-  if (shouldRedirect) {
-    res.redirect(constants.CLIENT_ORIGIN + '/#/phones/');
+//   const {
+//     shouldRedirect,
+//     sortBy,
+//     elementsOnPage,
+//     selectedPage,
+//     maxPages,
+//   } = processQuery({
+//     sort,
+//     page,
+//     perPage,
+//     totalElementsInDb,
+//     DEFAULT_PER_PAGE: constants.DEFAULT_PER_PAGE,
+//     DEFAULT_PAGE: constants.DEFAULT_PAGE,
+//   });
 
-    return;
-  }
+//   if (shouldRedirect) {
+//     res.redirect(constants.CLIENT_ORIGIN + '/#/');
 
-  try {
-    const {
-      count,
-      rows,
-    } = await phonesService.findAllWithPagination({
-      sortBy,
-      selectedPage,
-      elementsOnPage,
-    });
+//     return;
+//   }
 
-    res.send({
-      info:{
-        selectedPage,
-        perPage: elementsOnPage,
-        recordsOnPage: rows.length,
-        totalPages: maxPages,
-        totalRecords: count,
-      },
-      records: rows,
-    });
-  } catch (error) {
-    res.sendStatus(500);
-  }
-};
+//   try {
+//     const {
+//       count,
+//       rows,
+//     } = await phonesService.findAllWithPagination({
+//       sortBy,
+//       selectedPage,
+//       elementsOnPage,
+//     });
+
+//     res.send({
+//       info:{
+//         selectedPage,
+//         perPage: elementsOnPage,
+//         recordsOnPage: rows.length,
+//         totalPages: maxPages,
+//         totalRecords: count,
+//       },
+//       records: rows.map(row => parsePhoneData(row)),
+//     });
+//   } catch (error) {
+//     res.sendStatus(500);
+//   }
+// };

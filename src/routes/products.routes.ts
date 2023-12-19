@@ -8,3 +8,4 @@ export const productsRouter = Router();
 productsRouter.get('/new', productsController.getBrandNew);
 productsRouter.get('/discount', productsController.getHotPrices);
 productsRouter.get('/:id/recommended', productsController.getSuggestedProducts);
+productsRouter.get('/:category', productsController.findAllWithPagination);
