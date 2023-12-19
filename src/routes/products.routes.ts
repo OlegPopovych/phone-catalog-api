@@ -9,4 +9,4 @@ productsRouter.get('/new', productsController.getBrandNew);
 productsRouter.get('/discount', productsController.getHotPrices);
 productsRouter.get('/:id/recommended', productsController.getSuggestedProducts);
 productsRouter.get('/:category', productsController.findAllWithPagination);
-productsRouter.get('/favorites', productsController.getFavorites);
+productsRouter.get('/favorites/get', productsController.getFavorites);

@@ -60,8 +60,6 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   const {sort, page, perPage}: QueryParams = req.query;
   const {category} = req.params;
 
-  // const totalElementsInDb = await phonesService.getCount();
-
   const totalElementsInDb = await productsService.countByCatecory('phones');
 
   const {
@@ -118,6 +116,10 @@ export const getFavorites: ControllerAction = async (req, res) => {
     if (!itemsIds) {
       return res.sendStatus(400);
     }
+
+    const favoritesIds = JSON.parse(itemsIds);
+
+    console.log(favoritesIds);
 
     const prods = await productsService.getByItemId(JSON.parse(itemsIds));
 
