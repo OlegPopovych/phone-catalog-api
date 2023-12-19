@@ -60,8 +60,6 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   const {sort, page, perPage}: QueryParams = req.query;
   const {category} = req.params;
 
-  // const totalElementsInDb = await phonesService.getCount();
-
   const totalElementsInDb = await productsService.countByCatecory('phones');
 
   const {
@@ -111,20 +109,21 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   }
 };
 
-export const getByItemId: ControllerAction = async (req, res) => {
+export const getFavorites: ControllerAction = async (req, res) => {
   try {
-    const { itemsIds } = req.body;
-    const productsObjectsWithIds = await productsService.getByItemId(itemsIds);
-    const ids = productsObjectsWithIds.map(obj => obj.itemId);
+    const {itemsIds}: {itemsIds?: string} = req.query;
 
-    const randomIndexes = generateRandomArray({size: PRODUCTS_FOR_COMPONENT, to: ids.length - 1});
-    const randomIds = randomIndexes.reduce((acc: string[], k) => {
-      return acc = [...acc, ids[k]];
-    }, []);
+    if (!itemsIds) {
+      return res.sendStatus(400);
+    }
 
-    const suggestedProducts = await productsService.getByItemId(randomIds);
+    const favoritesIds = JSON.parse(itemsIds);
 
-    res.send(suggestedProducts);
+    console.log(favoritesIds);
+
+    const prods = await productsService.getByItemId(JSON.parse(itemsIds));
+
+    res.send(prods);
   } catch (error) {
     res.sendStatus(500);
   }
