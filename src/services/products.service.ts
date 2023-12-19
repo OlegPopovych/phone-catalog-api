@@ -47,18 +47,6 @@ export const getSuggestedProductsIds = async (itemId: string) => {
   return ids;
 };
 
-export const getSuggestedProducts = async (ids: string[]) => {
-  const prods = await ProductsModel.findAll({
-    where: {
-      itemId: {
-        [Op.in]: ids,
-      },
-    },
-  });
-
-  return prods.map(prod => normalizeProductsData(prod));
-};
-
 export const countByCatecory = async (category: string) => {
   const count = await ProductsModel.count({
     where: {
@@ -98,4 +86,16 @@ export const findAllWithPagination = async ({
     count,
     rows: rows.map(prod => normalizeProductsData(prod)),
   };
+};
+
+export const getByItemId = async (ids: string[]) => {
+  const prods = await ProductsModel.findAll({
+    where: {
+      itemId: {
+        [Op.in]: ids,
+      },
+    },
+  });
+
+  return prods.map(prod => normalizeProductsData(prod));
 };
