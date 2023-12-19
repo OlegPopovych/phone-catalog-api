@@ -48,7 +48,7 @@ export const getSuggestedProducts: ControllerAction = async (req, res) => {
       return acc = [...acc, ids[k]];
     }, []);
 
-    const suggestedProducts = await productsService.getSuggestedProducts(randomIds);
+    const suggestedProducts = await productsService.getByItemId(randomIds);
 
     res.send(suggestedProducts);
   } catch (error) {
@@ -106,6 +106,25 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
       },
       records: rows,
     });
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+export const getByItemId: ControllerAction = async (req, res) => {
+  try {
+    const { itemsIds } = req.body;
+    const productsObjectsWithIds = await productsService.getByItemId(itemsIds);
+    const ids = productsObjectsWithIds.map(obj => obj.itemId);
+
+    const randomIndexes = generateRandomArray({size: PRODUCTS_FOR_COMPONENT, to: ids.length - 1});
+    const randomIds = randomIndexes.reduce((acc: string[], k) => {
+      return acc = [...acc, ids[k]];
+    }, []);
+
+    const suggestedProducts = await productsService.getByItemId(randomIds);
+
+    res.send(suggestedProducts);
   } catch (error) {
     res.sendStatus(500);
   }

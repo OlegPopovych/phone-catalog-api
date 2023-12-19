@@ -2,16 +2,16 @@
   "phones": {
 		"id": "phones",
     "url": "https://i.ibb.co/P95L9xY/phones.png",
-    "alt": "Phone catalog"
+    "alt": "Mobile phones"
 	},
   "tablets": {
 		"id": "tablets",
     "url": "https://i.ibb.co/JdVRVsk/tablets.png",
-    "alt": "Tablets catalog"
+    "alt": "Tablets"
 	},
   "accessories": {
 		"id": "accessories",
-    "url": "https://i.ibb.co/KXLMxmT/accessories.png",
-    "alt": "Accessories catalog"
+    "url": "https://ibb.co/fSHnrWD",
+    "alt": "Accessories"
 	}
 }
