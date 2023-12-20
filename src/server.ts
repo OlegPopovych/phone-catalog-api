@@ -52,10 +52,10 @@ app.use(session({
   saveUninitialized: true,
   cookie: {
     maxAge: 60 * 60 * 24 * 1000,
-    // sameSite: 'none',
-    // secure: true,
-    // httpOnly: true,
-    domain: 'fe-aug23-nohuggingonlydebugging.github.io',
+    sameSite: 'none',
+    secure: true, // Встановіть true, якщо ви використовуєте HTTPS
+    httpOnly: true,
+    domain: 'fe-aug23-nohuggingonlydebugging.github.io', // Домен клієнта
   },
 }));
 
