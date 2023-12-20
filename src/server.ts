@@ -52,9 +52,9 @@ app.use(session({
   saveUninitialized: true,
   cookie: {
     maxAge: 60 * 60 * 24 * 1000,
-    sameSite: 'none',
-    secure: true,
-    httpOnly: true,
+    // sameSite: 'none',
+    // secure: true,
+    // httpOnly: true,
     domain: 'fe-aug23-nohuggingonlydebugging.github.io',
   },
 }));
