@@ -20,7 +20,7 @@ export const processQuery = ({
     shouldRedirect = true;
   }
 
-  let sortBy = 'id';
+  let sortBy = 'year';
 
   if (sort === SortType.age) {
     sortBy = 'year';

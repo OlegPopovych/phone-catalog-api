@@ -22,7 +22,10 @@ import { phonesRouter } from './routes/phones.routes';
 connect();
 
 const app = express()
-  .use(cors({ origin: ['http://localhost:3000', 'https://fe-aug23-nohuggingonlydebugging.github.io'], credentials: true, }));
+  .use(cors({ origin: [
+    // 'http://localhost:3000',
+    'https://fe-aug23-nohuggingonlydebugging.github.io'
+  ], credentials: true, }));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
