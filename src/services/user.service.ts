@@ -62,7 +62,7 @@ export const updateCart = async({userId, cart}: {userId: string, cart: string}) 
   try {
     const [data, created] = await CartModel.findOrCreate({
       where: { userId },
-      defaults: { favorite: JSON.stringify(cart) },
+      defaults: { cart: JSON.stringify(cart) },
     });
 
     if (!created) {
