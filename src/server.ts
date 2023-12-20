@@ -22,6 +22,7 @@ import { phonesRouter } from './routes/phones.routes';
 connect();
 
 const app = express()
+  .enable('trust proxy')
   .use(cors({ origin: [
     'http://localhost:3000',
     'https://fe-aug23-nohuggingonlydebugging.github.io'
