@@ -85,9 +85,9 @@ console.log(DB_URI);
 
 export const sequelize = new Sequelize(DB_URI ?? '', {
   models: [
-    AccessoriesModel,
+    // AccessoriesModel,
     ProductsModel,
-    PhoneModel,
+    // PhoneModel,
     TabletModel,
   ],
 });
@@ -120,14 +120,14 @@ sequelize
   .sync(
     { force: true }
   )
-  .then(() => {
-    seedPhones();
-    console.log(`${phonesNew.length} Телефонів засіяно!`);
-  })
-  .then(() => {
-    seedAccessories();
-    console.log(`${accessoriesNew.length} Аксесуарів засіяно!`);
-  })
+  // .then(() => {
+  //   seedPhones();
+  //   console.log(`${phonesNew.length} Телефонів засіяно!`);
+  // })
+  // .then(() => {
+  //   seedAccessories();
+  //   console.log(`${accessoriesNew.length} Аксесуарів засіяно!`);
+  // })
   .then(() => {
     seedTablet();
     console.log(`${tabletsNew.length} Планшетів засіяно!`);
