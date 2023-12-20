@@ -1,8 +1,8 @@
 'use strict';
 
 import { Op } from 'sequelize';
-import { ProductsModel } from '../models/newModels/ProductsModel';
 import { normalizeProductsData } from '../utils/normaliseData';
+import { ProductsModel } from '../models';
 
 export const getBrandNew = async ({ count }: { count:number }) => {
   const prods = await ProductsModel.findAndCountAll({
@@ -58,6 +58,7 @@ export const countByCatecory = async (category: string) => {
 };
 
 type PaginationParams = {
+	orderBy: string;
   sortBy: string;
   selectedPage: number;
   elementsOnPage: number;
@@ -65,6 +66,7 @@ type PaginationParams = {
 };
 
 export const findAllWithPagination = async ({
+  orderBy,
   sortBy,
   selectedPage,
   elementsOnPage,
@@ -77,7 +79,7 @@ export const findAllWithPagination = async ({
     where: {
       category,
     },
-    order: [[`${(sortBy)}`, 'ASC']],
+    order: [[`${(sortBy)}`, orderBy]],
     offset,
     limit: Number(elementsOnPage),
   });

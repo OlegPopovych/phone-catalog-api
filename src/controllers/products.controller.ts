@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import { ControllerAction, QueryParams } from '../types';
 import * as productsService from '../services/products.service';
 import { generateRandomArray } from '../utils/randomGenerator';
-import { processQuery } from '../utils/validateQuery';
+import { validateQuery } from '../utils/validateQuery';
 import * as constants from '../utils/constants';
 
 dotenv.config();
@@ -63,12 +63,13 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   const totalElementsInDb = await productsService.countByCatecory('phones');
 
   const {
+    orderBy,
     shouldRedirect,
     sortBy,
     elementsOnPage,
     selectedPage,
     maxPages,
-  } = processQuery({
+  } = validateQuery({
     sort,
     page,
     perPage,
@@ -88,6 +89,7 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
       count,
       rows,
     } = await productsService.findAllWithPagination({
+      orderBy,
       sortBy,
       selectedPage,
       elementsOnPage,

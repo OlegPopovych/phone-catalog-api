@@ -1,9 +1,6 @@
 'use strict';
 
-import { UserModel } from '../models';
-import { CartModel } from '../models/CartModel';
-import { FavoriteModel } from '../models/FavoriteModel';
-import { OrderModel } from '../models/OrderModel';
+import { CartModel, FavoriteModel, OrderModel, UserModel } from '../models';
 import { User } from '../types';
 
 export const normalizeData = (user: User) => {

@@ -1,7 +1,7 @@
 import { SortType } from '../emuns';
 import { QueryParamsProcess } from '../types';
 
-export const processQuery = ({
+export const validateQuery = ({
   sort,
   page,
   perPage,
@@ -11,28 +11,40 @@ export const processQuery = ({
 }: QueryParamsProcess) => {
   let shouldRedirect = false;
 
-  const validatedPage = page ? parseInt(page, 10) : DEFAULT_PAGE;
-  const validatedPerPage = perPage ? parseInt(perPage, 10) : DEFAULT_PER_PAGE;
+  let validatedPage = page ? parseInt(page, 10) : DEFAULT_PAGE;
+  let validatedPerPage = perPage ? parseInt(perPage, 10) : DEFAULT_PER_PAGE;
 
-  const maxPages = Math.ceil(totalElementsInDb / validatedPerPage);
+  let maxPages = Math.ceil(totalElementsInDb / validatedPerPage);
 
   if (validatedPage > maxPages || validatedPerPage > totalElementsInDb) {
     shouldRedirect = true;
   }
 
   let sortBy = 'year';
+  let order = 'DESC';
 
   if (sort === SortType.age) {
     sortBy = 'year';
+    order = 'DESC';
   }
   if (sort === SortType.title) {
     sortBy = 'name';
+    order = 'ASC';
   }
   if (sort === SortType.price) {
     sortBy = 'price';
+    order = 'ASC';
+  }
+
+  if(perPage === 'all') {
+    validatedPage = 1;
+    maxPages = 1;
+    validatedPerPage = totalElementsInDb;
+    shouldRedirect = false;
   }
 
   return {
+    orderBy: order,
     shouldRedirect,
     sortBy,
     maxPages,
