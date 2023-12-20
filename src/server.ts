@@ -23,7 +23,7 @@ connect();
 
 const app = express()
   .use(cors({ origin: [
-    // 'http://localhost:3000',
+    'http://localhost:3000',
     'https://fe-aug23-nohuggingonlydebugging.github.io'
   ], credentials: true, }));
 
