@@ -27,22 +27,37 @@ const app = express()
     'https://fe-aug23-nohuggingonlydebugging.github.io'
   ], credentials: true, }));
 
+app.options('*', cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
 app.use(cookieParser());
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || 'secret',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 60*60*24*1000,
-    },
-  })
-);
+// app.use(
+//   session({
+//     secret: process.env.SESSION_SECRET || 'secret',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       maxAge: 60*60*24*1000,
+//     },
+//   })
+// );
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 60 * 60 * 24 * 1000,
+    sameSite: 'none',
+    secure: true,
+    httpOnly: true,
+    domain: 'https://fe-aug23-nohuggingonlydebugging.github.io',
+  },
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
