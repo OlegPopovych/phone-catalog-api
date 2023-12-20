@@ -5,11 +5,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-import { AccessoriesModel } from '../../models/newModels/AccessoriesModel';
-import { ProductsModel } from '../../models/newModels/ProductsModel';
-import { PhoneModel } from '../../models/newModels/PhoneModel';
-import { TabletModel } from '../../models/newModels/TabletModel';
-
 import initialProducts from './initial_data/products.json';
 
 import accessoriesLinks from './initial_data/accessoriesLinks.json';
@@ -20,6 +15,7 @@ import phones from './initial_data/phones.json';
 
 import tabletsLinks from './initial_data/tabletsLinks.json';
 import tablets from './initial_data/tablets.json';
+import { AccessoriesModel, PhoneModel, ProductsModel, TabletModel } from '../../models';
 
 const phonesNew: {namespaceId: string; color: string; images: string}[] = [];
 const accessoriesNew: {namespaceId: string; color: string; images: string}[] = [];
@@ -85,9 +81,9 @@ console.log(DB_URI);
 
 export const sequelize = new Sequelize(DB_URI ?? '', {
   models: [
-    // AccessoriesModel,
+    AccessoriesModel,
     ProductsModel,
-    // PhoneModel,
+    PhoneModel,
     TabletModel,
   ],
 });
@@ -120,14 +116,14 @@ sequelize
   .sync(
     { force: true }
   )
-  // .then(() => {
-  //   seedPhones();
-  //   console.log(`${phonesNew.length} Телефонів засіяно!`);
-  // })
-  // .then(() => {
-  //   seedAccessories();
-  //   console.log(`${accessoriesNew.length} Аксесуарів засіяно!`);
-  // })
+  .then(() => {
+    seedPhones();
+    console.log(`${phonesNew.length} Телефонів засіяно!`);
+  })
+  .then(() => {
+    seedAccessories();
+    console.log(`${accessoriesNew.length} Аксесуарів засіяно!`);
+  })
   .then(() => {
     seedTablet();
     console.log(`${tabletsNew.length} Планшетів засіяно!`);

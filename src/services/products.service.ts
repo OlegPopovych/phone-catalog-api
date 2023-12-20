@@ -1,8 +1,8 @@
 'use strict';
 
 import { Op } from 'sequelize';
-import { ProductsModel } from '../models/newModels/ProductsModel';
 import { normalizeProductsData } from '../utils/normaliseData';
+import { ProductsModel } from '../models';
 
 export const getBrandNew = async ({ count }: { count:number }) => {
   const prods = await ProductsModel.findAndCountAll({

@@ -1,12 +1,14 @@
 import { Sequelize } from 'sequelize-typescript';
-import { AccessoriesModel } from '../models/newModels/AccessoriesModel';
-import { ProductsModel } from '../models/newModels/ProductsModel';
-import { PhoneModel } from '../models/newModels/PhoneModel';
-import { TabletModel } from '../models/newModels/TabletModel';
-import { UserModel } from '../models';
-import { OrderModel } from '../models/OrderModel';
-import { FavoriteModel } from '../models/FavoriteModel';
-import { CartModel } from '../models/CartModel';
+import { AccessoriesModel } from '../models/AccessoriesModel';
+import {
+  CartModel,
+  FavoriteModel,
+  OrderModel,
+  PhoneModel,
+  ProductsModel,
+  TabletModel,
+  UserModel
+} from '../models';
 
 const DB_URI = process.env.DB_URI;
 

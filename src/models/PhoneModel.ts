@@ -5,13 +5,12 @@ import {
   Column,
   Model,
   PrimaryKey,
-  ForeignKey,
   AllowNull,
+  DataType,
 } from 'sequelize-typescript';
-import { SpecificPhoneModel } from './SpecificPhoneModel';
 
 @Table({
-  tableName: 'phoneshortdata',
+  tableName: 'phones',
 })
 export class PhoneModel extends Model {
   @PrimaryKey
@@ -20,39 +19,11 @@ export class PhoneModel extends Model {
     id: string;
 
   @Column
-    category: string;
-
-  @ForeignKey(() => SpecificPhoneModel)
-  @Column
-    phoneId: string;
-
-  @Column
-    itemId: string;
-
-  @Column
-    name: string;
-
-  @Column
-    fullPrice: number;
-
-  @Column
-    price: number;
-
-  @Column
-    screen: string;
-
-  @Column
     capacity: string;
 
   @Column
     color: string;
 
-  @Column
-    ram: string;
-
-  @Column
-    year: number;
-
-  @Column
-    image: string;
+  @Column(DataType.JSONB)
+    data: any;
 }
