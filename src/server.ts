@@ -55,7 +55,7 @@ app.use(session({
     sameSite: 'none',
     secure: true,
     httpOnly: true,
-    domain: 'https://fe-aug23-nohuggingonlydebugging.github.io',
+    // domain: 'https://fe-aug23-nohuggingonlydebugging.github.io',
   },
 }));
 
