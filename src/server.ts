@@ -54,9 +54,9 @@ app.use(session({
   cookie: {
     maxAge: 60 * 60 * 24 * 1000,
     sameSite: 'none',
-    secure: true, // Встановіть true, якщо ви використовуєте HTTPS
+    secure: true,
     httpOnly: true,
-    domain: 'fe-aug23-nohuggingonlydebugging.github.io', // Домен клієнта
+    // domain: 'fe-aug23-nohuggingonlydebugging.github.io', // Домен клієнта
   },
 }));
 
