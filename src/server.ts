@@ -52,8 +52,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(errorHandler);
-
 app.use('/products', productsRouter);
 app.use('/phones', phonesRouter);
 app.use('/tablets', tabletsRouter);
@@ -65,6 +63,8 @@ app.use('/user', userRouter);
 app.get('/', (req, res) => {
   res.send('Hi dude!👽');
 });
+
+app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
   console.log(
