@@ -72,33 +72,33 @@ export const updateFavorites: ControllerAction = async (req, res) => {
 export const getOrders: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
 
-  try {
-    const orders = await userService.getOrders(userId);
+  // try {
+  const orders = await userService.getOrders(userId);
 
-    if(orders === null) {
-      res.send(JSON.stringify([]));
+  if(orders === null) {
+    res.send(JSON.stringify([]));
 
-      return;
-    }
-
-    res.send(orders);
-  } catch (error) {
-    res.sendStatus(500);
+    return;
   }
+
+  res.send(orders);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const createOrder: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
-  const order = req.body.favorite;
+  const order = req.body.order;
 
-  try {
-    const favorites = await userService.createOrder({
-      userId,
-      order,
-    });
+  // try {
+  const newOrder = await userService.createOrder({
+    userId,
+    order,
+  });
 
-    res.send(favorites);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  res.send(newOrder);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
