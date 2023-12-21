@@ -22,13 +22,34 @@ import { phonesRouter } from './routes/phones.routes';
 connect();
 
 const app = express()
-  .enable('trust proxy')
-  .use(cors({ origin: [
-    'http://localhost:3000',
-    'https://fe-aug23-nohuggingonlydebugging.github.io'
-  ], credentials: true, }));
+  .enable('trust proxy');
+  // .use(cors({ origin: [
+  //   'http://localhost:3000',
+  //   'https://fe-aug23-nohuggingonlydebugging.github.io'
+  // ], credentials: true, }));
 
-// app.options('*', cors());
+const whitelist = process.env.WHITELISTED_DOMAINS
+  ? process.env.WHITELISTED_DOMAINS.split(',')
+  : [];
+
+	interface CorsOptions {
+		origin: (origin: string | undefined, callback: (error: Error | null, allow?: boolean) => void) => void;
+		credentials: boolean;
+	}
+
+const corsOptions: CorsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

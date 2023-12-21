@@ -12,8 +12,6 @@ dotenv.config();
 
 export const getOneById: ControllerAction = async (req, res) => {
   const { id } = req.params;
-
-  // try {
   const phone = await phonesService.getById(id);
 
   if (!phone) {
@@ -22,8 +20,4 @@ export const getOneById: ControllerAction = async (req, res) => {
   }
 
   res.send(parsePhoneData(phone));
-
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };

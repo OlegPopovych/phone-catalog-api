@@ -66,7 +66,6 @@ async function processPhotos(
     };
 
     const linksFilePath = path.join(__dirname, 'accessoriesLinks.json');
-    // fs.writeFileSync(linksFilePath, JSON.stringify(linksObject, null, 2));
     fs.appendFileSync(linksFilePath, JSON.stringify(linksObject, null, 2));
 
     console.log('Посилання на фотографії збережено в файл links.json');
@@ -76,7 +75,6 @@ async function processPhotos(
 }
 
 const imgBBApiKey = process.env.IMGBB_API_key_v2 || '';
-console.log({imgBBApiKey});
 
 import folders from './img/accessoriesFolders.json';
 

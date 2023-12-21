@@ -5,7 +5,6 @@ import { ProductsModel } from '../models';
 
 export const getCart: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
-  // try {
   const cart = await userService.getCart(userId);
 
   if(cart === null) {
@@ -15,31 +14,23 @@ export const getCart: ControllerAction = async (req, res) => {
   }
 
   res.send(cart?.cart);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
 
 export const updateCart: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
   const cart = req.body.cart;
 
-  // try {
   const userCart = await userService.updateCart({
     userId,
     cart,
   });
 
   res.send(userCart?.cart);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
 
 export const getFavorites: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
 
-  // try {
   const favorites = await userService.getFavorites(userId);
 
   if(favorites === null) {
@@ -49,31 +40,23 @@ export const getFavorites: ControllerAction = async (req, res) => {
   }
 
   res.send(favorites?.favorite);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
 
 export const updateFavorites: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
   const favorite = req.body.favorite;
 
-  // try {
   const favorites = await userService.updateFavorites({
     userId,
     favorite,
   });
 
   res.send(favorites?.favorite);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
 
 export const getOrders: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
 
-  // try {
   const ordersFromDb = await userService.getOrders(userId);
 
   const parsedOrders = ordersFromDb.map(el => {
@@ -126,36 +109,16 @@ export const getOrders: ControllerAction = async (req, res) => {
   }
 
   res.send(preparedOrders);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
 
 export const createOrder: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
   const order = req.body.order;
 
-  // try {
   const newOrder = await userService.createOrder({
     userId,
     order,
   });
 
   res.send(newOrder);
-  // } catch (error) {
-  //   res.sendStatus(500);
-  // }
 };
-
-// [
-// 	{
-// 		createdAt,
-// 		products: [
-// 			{
-// 				name,
-// 				count,
-// 				img,
-// 			}
-// 		]
-// 	}
-// ]
