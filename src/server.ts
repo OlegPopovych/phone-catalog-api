@@ -23,10 +23,6 @@ connect();
 
 const app = express()
   .enable('trust proxy');
-  // .use(cors({ origin: [
-  //   'http://localhost:3000',
-  //   'https://fe-aug23-nohuggingonlydebugging.github.io'
-  // ], credentials: true, }));
 
 const whitelist = process.env.WHITELISTED_DOMAINS
   ? process.env.WHITELISTED_DOMAINS.split(',')
