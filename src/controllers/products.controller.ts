@@ -47,7 +47,7 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
   const {sort, page, perPage}: QueryParams = req.query;
   const {category} = req.params;
 
-  const totalElementsInDb = await productsService.countByCatecory('phones');
+  const totalElementsInDb = await productsService.countByCatecory(category);
 
   const {
     orderBy,

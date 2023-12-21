@@ -20,7 +20,6 @@ const signUpSchema = Joi.object({
 });
 
 export const ValidateFieldsSingUp = (req: Request, res: Response, next: NextFunction) => {
-  // const { name, email, password } = req.body;
   const { error } = signUpSchema.validate(req.body);
 
   if (error) {

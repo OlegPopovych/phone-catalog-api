@@ -33,7 +33,6 @@ export const getFavorites = async(userId: string) => {
 };
 
 export const updateFavorites = async({userId, favorite}: {userId: string, favorite: string}) => {
-  // try {
   const [data, created] = await FavoriteModel.findOrCreate({
     where: { userId },
     defaults: { favorite: JSON.stringify(favorite) },
@@ -45,9 +44,6 @@ export const updateFavorites = async({userId, favorite}: {userId: string, favori
   }
 
   return data;
-  // } catch (error) {
-  //   console.error('Error:', error);
-  // }
 };
 
 export const getCart = async(userId: string) => {
@@ -59,7 +55,6 @@ export const getCart = async(userId: string) => {
 };
 
 export const updateCart = async({userId, cart}: {userId: string, cart: string}) => {
-  // try {
   const [data, created] = await CartModel.findOrCreate({
     where: { userId },
     defaults: { cart: JSON.stringify(cart) },
@@ -71,9 +66,6 @@ export const updateCart = async({userId, cart}: {userId: string, cart: string}) 
   }
 
   return data;
-  // } catch (error) {
-  //   console.error('Error:', error);
-  // }
 };
 
 export const getOrders = async(userId: string) => {

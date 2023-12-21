@@ -12,7 +12,7 @@ passport.use(new LocalStrategy.Strategy(
   async function (email, password, done) {
     const currentUser = await userService.findByEmail(email);
 
-    console.log(`🚩🚩🚩That dude tries to log in! His name ${currentUser?.name}🚩🚩🚩`);
+    console.log(`🚩🚩🚩That dude tries to log in! His name ${currentUser?.name || 'Stranger'}🚩🚩🚩`);
 
     if (!currentUser) {
       return done(null, false, { message: `User with email ${email} does not exist` });
