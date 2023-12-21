@@ -33,21 +33,21 @@ export const getFavorites = async(userId: string) => {
 };
 
 export const updateFavorites = async({userId, favorite}: {userId: string, favorite: string}) => {
-  try {
-    const [data, created] = await FavoriteModel.findOrCreate({
-      where: { userId },
-      defaults: { favorite: JSON.stringify(favorite) },
-    });
+  // try {
+  const [data, created] = await FavoriteModel.findOrCreate({
+    where: { userId },
+    defaults: { favorite: JSON.stringify(favorite) },
+  });
 
-    if (!created) {
-      data.favorite = JSON.stringify(favorite);
-      await data.save();
-    }
-
-    return data;
-  } catch (error) {
-    console.error('Error:', error);
+  if (!created) {
+    data.favorite = JSON.stringify(favorite);
+    await data.save();
   }
+
+  return data;
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
 };
 
 export const getCart = async(userId: string) => {
@@ -59,21 +59,21 @@ export const getCart = async(userId: string) => {
 };
 
 export const updateCart = async({userId, cart}: {userId: string, cart: string}) => {
-  try {
-    const [data, created] = await CartModel.findOrCreate({
-      where: { userId },
-      defaults: { cart: JSON.stringify(cart) },
-    });
+  // try {
+  const [data, created] = await CartModel.findOrCreate({
+    where: { userId },
+    defaults: { cart: JSON.stringify(cart) },
+  });
 
-    if (!created) {
-      data.cart = JSON.stringify(cart);
-      await data.save();
-    }
-
-    return data;
-  } catch (error) {
-    console.error('Error:', error);
+  if (!created) {
+    data.cart = JSON.stringify(cart);
+    await data.save();
   }
+
+  return data;
+  // } catch (error) {
+  //   console.error('Error:', error);
+  // }
 };
 
 export const getOrders = async(userId: string) => {

@@ -13,15 +13,15 @@ dotenv.config();
 const PRODUCTS_FOR_COMPONENT = 10;
 
 export const getBrandNew: ControllerAction = async (req, res) => {
-  try {
-    const products = await productsService.getBrandNew({
-      count: PRODUCTS_FOR_COMPONENT,
-    });
+  // try {
+  const products = await productsService.getBrandNew({
+    count: PRODUCTS_FOR_COMPONENT,
+  });
 
-    res.send(products);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  res.send(products);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const getHotPrices: ControllerAction = async (req, res) => {
@@ -98,31 +98,31 @@ export const findAllWithPagination: ControllerAction = async (req, res) => {
     return;
   }
 
-  try {
-    const {
-      count,
-      rows,
-    } = await productsService.findAllWithPagination({
-      orderBy,
-      sortBy,
-      selectedPage,
-      elementsOnPage,
-      category,
-    });
+  // try {
+  const {
+    count,
+    rows,
+  } = await productsService.findAllWithPagination({
+    orderBy,
+    sortBy,
+    selectedPage,
+    elementsOnPage,
+    category,
+  });
 
-    res.send({
-      info:{
-        selectedPage,
-        perPage: elementsOnPage,
-        recordsOnPage: rows.length,
-        totalPages: maxPages,
-        totalRecords: count,
-      },
-      records: rows,
-    });
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  res.send({
+    info:{
+      selectedPage,
+      perPage: elementsOnPage,
+      recordsOnPage: rows.length,
+      totalPages: maxPages,
+      totalRecords: count,
+    },
+    records: rows,
+  });
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const getFavorites: ControllerAction = async (req, res) => {
