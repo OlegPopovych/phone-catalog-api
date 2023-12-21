@@ -9,6 +9,8 @@ export const getCart: ControllerAction = async (req, res) => {
 
     if(cart === null) {
       res.send(JSON.stringify([]));
+
+      return;
     }
 
     res.send(cart?.cart);
@@ -41,6 +43,8 @@ export const getFavorites: ControllerAction = async (req, res) => {
 
     if(favorites === null) {
       res.send(JSON.stringify([]));
+
+      return;
     }
 
     res.send(favorites?.favorite);
@@ -73,6 +77,8 @@ export const getOrders: ControllerAction = async (req, res) => {
 
     if(orders === null) {
       res.send(JSON.stringify([]));
+
+      return;
     }
 
     res.send(orders);
