@@ -4,69 +4,69 @@ import * as userService from '../services/user.service';
 
 export const getCart: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
-  try {
-    const cart = await userService.getCart(userId);
+  // try {
+  const cart = await userService.getCart(userId);
 
-    if(cart === null) {
-      res.send(JSON.stringify([]));
+  if(cart === null) {
+    res.send(JSON.stringify([]));
 
-      return;
-    }
-
-    res.send(cart?.cart);
-  } catch (error) {
-    res.sendStatus(500);
+    return;
   }
+
+  res.send(cart?.cart);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const updateCart: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
   const cart = req.body.cart;
 
-  try {
-    const userCart = await userService.updateCart({
-      userId,
-      cart,
-    });
+  // try {
+  const userCart = await userService.updateCart({
+    userId,
+    cart,
+  });
 
-    res.send(userCart?.cart);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  res.send(userCart?.cart);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const getFavorites: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
 
-  try {
-    const favorites = await userService.getFavorites(userId);
+  // try {
+  const favorites = await userService.getFavorites(userId);
 
-    if(favorites === null) {
-      res.send(JSON.stringify([]));
+  if(favorites === null) {
+    res.send(JSON.stringify([]));
 
-      return;
-    }
-
-    res.send(favorites?.favorite);
-  } catch (error) {
-    res.sendStatus(500);
+    return;
   }
+
+  res.send(favorites?.favorite);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const updateFavorites: ControllerAction = async (req, res) => {
   const userId = (req.user as User).id;
   const favorite = req.body.favorite;
 
-  try {
-    const favorites = await userService.updateFavorites({
-      userId,
-      favorite,
-    });
+  // try {
+  const favorites = await userService.updateFavorites({
+    userId,
+    favorite,
+  });
 
-    res.send(favorites?.favorite);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  res.send(favorites?.favorite);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const getOrders: ControllerAction = async (req, res) => {

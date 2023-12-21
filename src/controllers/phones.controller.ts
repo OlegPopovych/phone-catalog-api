@@ -13,17 +13,17 @@ dotenv.config();
 export const getOneById: ControllerAction = async (req, res) => {
   const { id } = req.params;
 
-  try {
-    const phone = await phonesService.getById(id);
+  // try {
+  const phone = await phonesService.getById(id);
 
-    if (!phone) {
-      res.sendStatus(404);
-      return;
-    }
-
-    res.send(parsePhoneData(phone));
-
-  } catch (error) {
-    res.sendStatus(500);
+  if (!phone) {
+    res.sendStatus(404);
+    return;
   }
+
+  res.send(parsePhoneData(phone));
+
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };

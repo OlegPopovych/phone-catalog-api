@@ -18,7 +18,6 @@ import { tabletsRouter } from './routes/tablets.routes';
 import { accessoriesRouter } from './routes/accessories.routes';
 import { productsRouter } from './routes/products.routes';
 import { phonesRouter } from './routes/phones.routes';
-import { errorHandler } from './utils/errorHandler';
 
 connect();
 
@@ -63,8 +62,6 @@ app.use('/user', userRouter);
 app.get('/', (req, res) => {
   res.send('Hi dude!👽');
 });
-
-app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
   console.log(
