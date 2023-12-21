@@ -6,7 +6,6 @@ import { ControllerAction } from '../types';
 import * as productsService from '../services/products.service';
 
 export const getSliderData: ControllerAction = async (req, res) => {
-  // try {
   const filePath = path.join(__dirname, '../../public/sliderData.json');
 
   const data = await fsPromises.readFile(filePath, 'utf8');
@@ -14,14 +13,9 @@ export const getSliderData: ControllerAction = async (req, res) => {
   const jsonData = JSON.parse(data);
 
   res.json(jsonData);
-  // } catch (error) {
-  //   console.error('Error:', error);
-  //   res.sendStatus(500);
-  // }
 };
 
 export const getCategorysData: ControllerAction = async (req, res) => {
-  // try {
   const filePath = path.join(__dirname, '../../public/categoryData.json');
 
   const data = await fsPromises.readFile(filePath, 'utf8');
@@ -47,8 +41,4 @@ export const getCategorysData: ControllerAction = async (req, res) => {
     tablesData.tablets,
     tablesData.accessories,
   ]);
-  // } catch (error) {
-  //   console.error('Error:', error);
-  //   res.sendStatus(500);
-  // }
 };
