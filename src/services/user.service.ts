@@ -86,7 +86,7 @@ export const getOrders = async(userId: string) => {
 
 export const createOrder = async({userId, order}: {userId: string, order: string}) => {
   return OrderModel.create({
-    order,
     userId,
+    order: JSON.stringify(order),
   });
 };

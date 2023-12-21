@@ -25,36 +25,50 @@ export const getBrandNew: ControllerAction = async (req, res) => {
 };
 
 export const getHotPrices: ControllerAction = async (req, res) => {
-  try {
-    const products = await productsService.getHotPrices({
-      count: PRODUCTS_FOR_COMPONENT,
-    });
-
-    res.send(products);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  // try {
+  const products = await productsService.getHotPrices({
+    count: PRODUCTS_FOR_COMPONENT,
+  });
+  // throw 'hello';
+  res.send(products);
+  // } catch (error) {
+  //   res.sendStatus(500);
+  // }
 };
 
 export const getSuggestedProducts: ControllerAction = async (req, res) => {
   const {id: itemId} = req.params;
 
-  try {
-    const productsObjectsWithIds = await productsService.getSuggestedProductsIds(itemId);
-    const ids = productsObjectsWithIds.map(obj => obj.itemId);
+  const productsObjectsWithIds = await productsService.getSuggestedProductsIds(itemId);
+  const ids = productsObjectsWithIds.map(obj => obj.itemId);
 
-    const randomIndexes = generateRandomArray({size: PRODUCTS_FOR_COMPONENT, to: ids.length - 1});
-    const randomIds = randomIndexes.reduce((acc: string[], k) => {
-      return acc = [...acc, ids[k]];
-    }, []);
+  const randomIndexes = generateRandomArray({size: PRODUCTS_FOR_COMPONENT, to: ids.length - 1});
+  const randomIds = randomIndexes.reduce((acc: string[], k) => {
+    return acc = [...acc, ids[k]];
+  }, []);
 
-    const suggestedProducts = await productsService.getByItemId(randomIds);
-
-    res.send(suggestedProducts);
-  } catch (error) {
-    res.sendStatus(500);
-  }
+  const suggestedProducts = await productsService.getByItemId(randomIds);
+  res.send(suggestedProducts);
 };
+// export const getSuggestedProducts: ControllerAction = async (req, res) => {
+//   const {id: itemId} = req.params;
+
+//   try {
+//     const productsObjectsWithIds = await productsService.getSuggestedProductsIds(itemId);
+//     const ids = productsObjectsWithIds.map(obj => obj.itemId);
+
+//     const randomIndexes = generateRandomArray({size: PRODUCTS_FOR_COMPONENT, to: ids.length - 1});
+//     const randomIds = randomIndexes.reduce((acc: string[], k) => {
+//       return acc = [...acc, ids[k]];
+//     }, []);
+
+//     const suggestedProducts = await productsService.getByItemId(randomIds);
+
+//     res.send(suggestedProducts);
+//   } catch (error) {
+//     res.sendStatus(500);
+//   }
+// };
 
 export const findAllWithPagination: ControllerAction = async (req, res) => {
   const {sort, page, perPage}: QueryParams = req.query;
