@@ -102,10 +102,6 @@ export const getFavorites: ControllerAction = async (req, res) => {
       return res.sendStatus(400);
     }
 
-    const favoritesIds = JSON.parse(itemsIds);
-
-    console.log(favoritesIds);
-
     const prods = await productsService.getByItemId(JSON.parse(itemsIds));
 
     res.send(prods);

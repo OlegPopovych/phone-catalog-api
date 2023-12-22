@@ -68,6 +68,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/files', express.static('public'));
+
 app.use('/products', productsRouter);
 app.use('/phones', phonesRouter);
 app.use('/tablets', tabletsRouter);

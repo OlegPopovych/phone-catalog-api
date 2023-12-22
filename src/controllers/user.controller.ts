@@ -100,8 +100,6 @@ export const getOrders: ControllerAction = async (req, res) => {
     });
   }
 
-  console.log(preparedOrders);
-
   if(ordersFromDb === null) {
     res.send(JSON.stringify([]));
 
