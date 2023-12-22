@@ -19,7 +19,16 @@ export const signUp: ControllerAction = async (req, res) => {
       });
     }
 
-    res.sendStatus(201);
+    newUser && (
+      req.login((newUser as User), function(err) {
+        if (err) {
+          console.log(err);
+        }
+        return res.status(201).send(
+          userService.normalizeData((newUser))
+        );
+      })
+    );
   } catch (error) {
     res.sendStatus(500);
   }
