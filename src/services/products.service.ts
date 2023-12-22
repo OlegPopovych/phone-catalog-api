@@ -6,7 +6,7 @@ import { ProductsModel } from '../models';
 
 export const getBrandNew = async ({ count }: { count:number }) => {
   const prods = await ProductsModel.findAndCountAll({
-    order: [['fullPrice', 'DESC']],
+    order: [['fullPrice', 'ASC']],
     offset: 0,
     limit: count,
   });
